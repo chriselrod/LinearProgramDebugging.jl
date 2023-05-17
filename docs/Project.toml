@@ -1,0 +1,3 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+LinearProgramDebugging = "987fedc8-4679-486d-b3d4-8ea116e1f9e2"
