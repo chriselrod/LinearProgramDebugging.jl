@@ -1,6 +1,6 @@
 module LinearProgramDebugging
 
-using JuMP, HiGHS
+using JuMP, HiGHS, LinearAlgebra
 
 export fit, define_var
 
