@@ -27,10 +27,11 @@ function checksat(c, C)
   return model
 end
 
-function define_var(C, offset, x)
-  N = offset + length(x)
-  C2 = @views hcat(C[:, 1:offset], C[:, N+1:end])
-  @views mul!(C2[:, 1], C[:, 1+offset:N], x, -1, 1)
+function define_var(C, x, trunc = 0)
+  N = length(x)
+  D = size(C, 2) - trunc
+  C2 = C[:, 1:D-N]
+  @views mul!(C2[:, 1], C[:, D+1-N:D], x, -1, 1)
   C2
 end
 
