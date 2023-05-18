@@ -27,7 +27,9 @@ C = [
  0  0   0  -1  0   0  1  -1   0   1   0  0   0  0  0  0  -1   0   0
  0  0  -1   0  0   1  0   0  -1   0   1  0   0  0  0  0   0  -1   0
 ]
+fit(define_var(C[:, 1:end-1], 11, [1, 0, 0, 1, 1, 0, 1]), 0) # Model   status      : Optimal
+fit(define_var(C[:, 1:end-1], 11, [0, 0, 0, 1, 1, 0, 1]), 0) # Model   status      : Optimal
 
-fit(define_var(C[:, 1:end-1], 11, [1, 0, 0, 1, 1, 0, 1]), 1) # Model   status      : Optimal
-fit(define_var(C[:, 1:end-1], 11, [0, 0, 0, 1, 1, 0, 1]), 1) # Model   status      : Infeasible
+x = [1,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,1,0];
+@views C[:,1] == C[:,2:end]*x # trua
 ```
